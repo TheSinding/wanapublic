@@ -3,7 +3,7 @@
         <nav class="navbar  my-lg navbar-expand-lg navbar-light ">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger text-white font-logo"
-                    href="#page-top">What a nice API!</a>
+                    href="#/">What a nice API!</a>
                 <button class="navbar-toggler navbar-toggler-right"
                     type="button" data-toggle="collapse"
                     data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -11,25 +11,19 @@
                     Menu
                     <i class="fa fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
+                <div class="collapse navbar-collapse" id="navbarResponsive"
+                    v-if="!$root.state.auth.authenticated">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <b-btn variant="none" class="text-white nav-link js-scroll-trigger"
-                                href="/docs">
+                                href="#/docs">
                                 Documentation
                             </b-btn>
                         </li>
                         <li class="nav-item">
                             <b-btn variant="none" class="text-white nav-link js-scroll-trigger"
-                                href="/login">
-                                Sign in
-                            </b-btn>
-                        </li>
-                        <li class="nav-item">
-                            <b-btn class="text-white nav-link js-scroll-trigger"
-                                href="http://localhost:3030/auth/github">
-                                Login with Github
-                                <i class="fab fa-github-square"></i>
+                                href="#/login">
+                                Login
                             </b-btn>
                         </li>
                     </ul>
@@ -42,7 +36,6 @@
 <script>
 export default {
   created () {
-    const { auth } = this.$root.state
   }
 }
 </script>
