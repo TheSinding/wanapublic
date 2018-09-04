@@ -3,7 +3,7 @@
         <b-container class="h-100">
             <div class="row h-100">
                 <div class="my-auto mx-auto">
-
+                    <h1>Dashboard</h1>
                 </div>
             </div>
         </b-container>
