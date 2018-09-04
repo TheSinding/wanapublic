@@ -1,7 +1,6 @@
 <template>
-    <b-container fluid>
-        <nav class="navbar  navbar-expand-lg navbar-light fixed-top"
-            id="mainNav">
+    <b-container style="height:100%">
+        <nav class="navbar  my-lg navbar-expand-lg navbar-light ">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger text-white font-logo"
                     href="#page-top">What a nice API!</a>
@@ -21,9 +20,15 @@
                             </b-btn>
                         </li>
                         <li class="nav-item">
+                            <b-btn variant="none" class="text-white nav-link js-scroll-trigger"
+                                href="/login">
+                                Sign in
+                            </b-btn>
+                        </li>
+                        <li class="nav-item">
                             <b-btn class="text-white nav-link js-scroll-trigger"
-                                href="/auth/github">
-                                Sign in with Github
+                                href="http://localhost:3030/auth/github">
+                                Login with Github
                                 <i class="fab fa-github-square"></i>
                             </b-btn>
                         </li>
@@ -31,14 +36,13 @@
                 </div>
             </div>
         </nav>
-        <router-view/>
+        <router-view />
     </b-container>
 </template>
 <script>
-import client from '../vendors/feathers/'
 export default {
   created () {
-    console.log(client)
+    const { auth } = this.$root.state
   }
 }
 </script>
