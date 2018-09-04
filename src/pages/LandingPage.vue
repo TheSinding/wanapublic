@@ -1,35 +1,31 @@
 <template>
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100">
-        <div class="col-lg-7 my-auto">
-          <div class="header-content mx-auto">
-            <h1 class="mb-5">It's as simple as doing</h1>
-            <pre class="code-example shadow" v-highlightjs><code class="bash">curl --request GET http://whataniceapi.com/api/sentences?random=true&apikey={YOURKEY}</code></pre>
-            <pre class="code-example shadow" v-highlightjs="sourcecode"><code class="json"></code></pre>
-          </div>
+    <div class="row  align-content-stretch  h-100">
+      <div class="col-lg-7 my-auto">
+        <div class="header-content mx-auto">
+          <h1 class="mb-5">It's as simple as doing</h1>
+          <pre class="code-example shadow" v-highlightjs><code class="bash">curl --request GET https://whataniceapi.com/api/sentences?random=true&apikey={YOURKEY}</code></pre>
+          <pre class="code-example shadow" v-highlightjs="sourcecode"><code class="json"></code></pre>
         </div>
-        <div class="col-lg-5 my-auto">
-          <div class="device-container">
-            <div class="device-mockup iphone6_plus portrait white">
-              <div class="device">
-                What a nice API, is a very simple REST API (streaming
-                is coming), that speaks nicely to you.
-                Use it to greet your customers, make
-                a cute website saying nice things,
-                have it greet you every time you open
-                a new bash terminal. It's free
-                <b-btn variant="primary">
-                  Let's do it!
-                  <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                </b-btn>
-              </div>
+      </div>
+      <div class="col-lg-5 my-auto">
+        <div class="device-container">
+          <div class="device-mockup iphone6_plus portrait white">
+            <div class="device">
+              What a nice API, is a very simple REST API (streaming
+              is coming), that speaks nicely to you.
+              Use it to greet your customers, make
+              a cute website saying nice things,
+              have it greet you every time you open
+              a new bash terminal. It's free
+              <b-btn variant="primary">
+                Let's do it!
+                <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+              </b-btn>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </header>
 </template>
 
 <script>
@@ -67,7 +63,7 @@ export default {
 .masthead {
   color: white;
   background: #957bbe;
-  height: 100vh;
+  /* height: 100vh; */
 }
 .code-example {
   border-radius: 8px;
