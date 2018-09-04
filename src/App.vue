@@ -1,6 +1,6 @@
 <template>
   <div class="app fullheight">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -17,8 +17,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: #957bbe;
+}
+body {
+  background: #957bbe;
 }
 .fullheight {
-  height: 100%;
+  height: 100vh;
 }
 </style>
