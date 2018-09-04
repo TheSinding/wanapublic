@@ -8,7 +8,7 @@ import App from './App'
 import 'bootstrap/dist/css/bootstrap.css'
 import './assets/css/main.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-
+import store from './store'
 import router from './router'
 import client from './vendors/feathers'
 import 'highlight.js/styles/atom-one-dark.css'
@@ -21,12 +21,20 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  data: {
+    state: store.state
+  },
   components: { App },
   async created () {
     try {
-      await client.authenticate()
+      const auth = await client.authenticate()
+      this.state.auth.authenticated = true
+      const payload = await client.passport.verifyJWT(auth.accessToken)
+      const user = await client.service('users').get(payload.userId)
+      this.state.auth.user = user
     } catch (error) {
-      console.log(error)
+      console.error(error.message)
+      // Do nothing ?
     }
   },
   template: '<App/>'
