@@ -18,24 +18,28 @@ Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  data: {
-    state: store.state
-  },
-  components: { App },
-  async created () {
-    try {
-      const auth = await client.authenticate()
-      this.state.auth.authenticated = true
-      const payload = await client.passport.verifyJWT(auth.accessToken)
-      const user = await client.service('users').get(payload.userId)
-      this.state.auth.user = user
-    } catch (error) {
-      console.error(error.message)
-      // Do nothing ?
-    }
-  },
-  template: '<App/>'
-})
+async function startUp () {
+  try {
+    await store.initStore()
+  } catch (error) {
+    console.error(error.message)
+    // Do nothing ?
+  } finally {
+    initVue()
+  }
+}
+
+function initVue () {
+  new Vue({
+    el: '#app',
+    router,
+    store,
+    data: {
+      state: store.state,
+      store: store
+    },
+    components: { App },
+    template: '<App/>'
+  })
+}
+startUp()
