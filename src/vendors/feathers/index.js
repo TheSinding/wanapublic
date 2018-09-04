@@ -3,7 +3,7 @@ import socketio from '@feathersjs/socketio-client'
 import auth from '@feathersjs/authentication-client'
 import io from 'socket.io-client'
 
-const socket = io('wss://653d7bcb.ngrok.io', { transports: ['websocket'] })
+const socket = io('localhost:3030', { transports: ['websocket'] })
 
 const client = feathers()
   .configure(socketio(socket))
@@ -15,4 +15,16 @@ const client = feathers()
     })
   )
 
+const authWithEmail = async (email, password) => {
+  try {
+    await client.authenticate({
+      strategy: 'local',
+      email,
+      password
+    })
+  } catch (error) {
+    throw error
+  }
+}
+export { authWithEmail }
 export default client
