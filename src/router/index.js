@@ -18,6 +18,7 @@ const router = new Router({
       children: [
         {
           path: '',
+          name: 'home',
           component: LandingPage
         },
         {
@@ -26,10 +27,12 @@ const router = new Router({
         },
         {
           path: 'login',
+          name: 'login',
           component: LoginForm
         },
         {
           path: 'dashboard',
+          name: 'dashboard',
           component: Dashboard,
           meta: {
             requiresAuth: true
@@ -43,6 +46,7 @@ const router = new Router({
     },
     {
       path: '*',
+      name: '404',
       component: NotFound
     }
   ]

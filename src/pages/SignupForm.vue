@@ -33,6 +33,7 @@
 <script>
 import client from '../vendors/feathers'
 export default {
+  name: 'signup',
   data () {
     return {
       form: {

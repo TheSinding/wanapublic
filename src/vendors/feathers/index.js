@@ -2,7 +2,8 @@ import feathers from '@feathersjs/feathers'
 import socketio from '@feathersjs/socketio-client'
 import auth from '@feathersjs/authentication-client'
 import io from 'socket.io-client'
-const socket = io('localhost:3030', { transports: ['websocket'] })
+import { Collection } from 'mongoose'
+const socket = io(process.env.API_URL, { transports: ['websocket'] })
 
 const client = feathers()
   .configure(socketio(socket))
@@ -13,6 +14,9 @@ const client = feathers()
       storageKey: 'wana-jwt'
     })
   )
+const keyService = client.service('apikeys')
+const usersService = client.service('apikeys')
+const service = client.service
 
 const authWithEmail = (email, password) => {
   return client.authenticate({
@@ -21,5 +25,6 @@ const authWithEmail = (email, password) => {
     password
   })
 }
-export { authWithEmail }
+
+export { authWithEmail, keyService, usersService, service }
 export default client

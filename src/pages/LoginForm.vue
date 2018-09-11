@@ -16,7 +16,7 @@
             </b-form-group>
             <b-btn variant="link" class="w-100" type="submit">Sign in</b-btn>
             <hr class="hr-text">
-            <b-btn class="text-white nav-link" href="http://localhost:3030/auth/github">
+            <b-btn class="text-white nav-link" href="https://whataniceapi.com/auth/github">
               <i class="fab fa-github-square"></i>
               Sign in with Github
             </b-btn>
@@ -32,6 +32,8 @@
 
 <script>
 export default {
+  name: 'login',
+
   data () {
     return {
 
