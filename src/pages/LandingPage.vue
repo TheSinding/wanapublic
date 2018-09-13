@@ -4,7 +4,7 @@
       <div class="header-content mx-auto">
         <h1 class="mb-5 text-white">Put some love in your app!</h1>
         <h2 class="mb-5 text-white">It's as simple as doing</h2>
-        <pre class="code-example shadow" v-highlightjs><code class="bash">curl --request GET https://whataniceapi.com/api/sentences?random=true</code></pre>
+        <pre class="code-example shadow" v-highlightjs><code class="bash">curl --request GET https://api.whataniceapi.com/v1/sentences/random</code></pre>
         <p class="text-white">Example output</p>
         <pre class="code-example shadow" v-highlightjs="sentenceFomatted"><code class="json"></code></pre>
       </div>
