@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: wana-frontend
-          image: eu.gcr.io/tea-project-211819/simonsinding/wana-frontend
+          image: eu.gcr.io/tea-project-211819/simonsinding/wana-frontend:v0.1.0
           ports:
             - containerPort: 5000
 ---
