@@ -8,9 +8,7 @@ import App from './App'
 import 'bootstrap/dist/css/bootstrap.css'
 import './assets/css/main.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import store from './store'
 import router from './router'
-import client from './vendors/feathers'
 import 'highlight.js/styles/atom-one-dark.css'
 Vue.use(VueHighlightJS)
 
@@ -18,28 +16,10 @@ Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-async function startUp () {
-  try {
-    await store.initStore()
-  } catch (error) {
-    console.error(error.message)
-    // Do nothing ?
-  } finally {
-    initVue()
-  }
-}
 
-function initVue () {
-  new Vue({
-    el: '#app',
-    router,
-    store,
-    data: {
-      state: store.state,
-      store: store
-    },
-    components: { App },
-    template: '<App/>'
-  })
-}
-startUp()
+new Vue({
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App/>'
+})

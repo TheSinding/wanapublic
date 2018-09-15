@@ -14,17 +14,7 @@ const client = feathers()
       storageKey: 'wana-jwt'
     })
   )
-const keyService = client.service('apikeys')
-const usersService = client.service('apikeys')
 const service = client.service
 
-const authWithEmail = (email, password) => {
-  return client.authenticate({
-    strategy: 'local',
-    email,
-    password
-  })
-}
-
-export { authWithEmail, keyService, usersService, service }
+export { service }
 export default client

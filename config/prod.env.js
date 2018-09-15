@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  API_URL: '"https://whataniceapi.com"'
+  API_URL: '"https://api.whataniceapi.com"'
 }
