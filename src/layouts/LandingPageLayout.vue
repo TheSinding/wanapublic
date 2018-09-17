@@ -1,8 +1,5 @@
 <template>
-  <b-container style="height:100%">
-    <nav-bar />
-    <router-view />
-  </b-container>
+  <router-view />
 </template>
 <script>
 import NavBar from '../components/NavBar'

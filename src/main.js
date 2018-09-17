@@ -9,7 +9,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './assets/css/main.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
+import VueParticles from 'vue-particles'
+
 import 'highlight.js/styles/atom-one-dark.css'
+Vue.use(VueParticles)
 Vue.use(VueHighlightJS)
 
 Vue.use(BootstrapVue)

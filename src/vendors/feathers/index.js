@@ -15,6 +15,7 @@ const client = feathers()
     })
   )
 const service = client.service
+const aggregations = client.service('aggregations')
 
-export { service }
+export { service, aggregations }
 export default client
